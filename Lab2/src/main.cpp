@@ -1,24 +1,12 @@
 #include <Arduino.h>
-
+#include "Beep.h"
 static const int LED = 13;
+Beep beep(LED);
 
 void setup(){
   pinMode(LED, OUTPUT);
 }
-void dot(){
-    digitalWrite(LED, HIGH);
-    delay(100);
-    digitalWrite(LED, LOW);
-    delay(100);
-}
-
-void dash(){
-    digitalWrite(LED, HIGH);
-    delay(1000);
-    digitalWrite(LED, LOW);
-    delay(100);
-}
 
 void loop(){
-  dash();dash();dot();dot();
+  beep.dash();beep.dash();beep.dot();beep.dot();
 }
